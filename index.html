@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Summer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/hellokitty.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blinking-dot {
+            animation: blink 1s steps(1, end) infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .floating-image {
+            position: absolute;
+            width: 120px; /* Adjust size as needed */
+            height: 120px; /* Adjust size as needed */
+            z-index: -1; /* Place behind other content */
+            opacity: 0.3; /* Reduce opacity */
+        }
+
+        .flower {
+            height: 200px;
+            width: 200px;
+            margin:20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .mid {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #000, #ff5e00, #000);
+            z-index: 4;
+            background-size: 5px 5px;
+            filter: drop-shadow(0 0 8px #682600);
+        }
+
+        .Petal1 {
+            position: absolute;
+            left: 40px;
+            z-index: 3;
+            width: 120px;
+            height: 30px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff5e00, #ffbb00);
+            filter: drop-shadow(0 0 5px #e05200);
+        }
+
+        .Petal1.p1 { transform: rotate(22.5deg); }
+        .Petal1.p2 { transform: rotate(67.5deg); }
+        .Petal1.p3 { transform: rotate(110.5deg); }
+        .Petal1.p4 { transform: rotate(157.5deg); }
+
+        .Petal2 {
+            position: absolute;
+            left: 0;
+            z-index: 2;
+            width: 200px;
+            height: 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff5e00, #fbd702);
+            filter: drop-shadow(0 0 5px #e05200);
+        }
+
+        .Petal2.p2 { transform: rotate(90deg); }
+        .Petal2.p3 { transform: rotate(45deg); }
+        .Petal2.p4 { transform: rotate(135deg); }
+
+        .Petal3 {
+            position: absolute;
+            left: 0px;
+            z-index: 1;
+            width: 200px;
+            height: 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff5e00, #fbd702);
+            filter: drop-shadow(0 0 2px #fbd702);
+        }
+
+        .Petal3.p1 { transform: rotate(22.5deg); }
+        .Petal3.p2 { transform: rotate(67.5deg); }
+        .Petal3.p3 { transform: rotate(110.5deg); }
+        .Petal3.p4 { transform: rotate(157.5deg); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .animation-slow {
+            animation-name: float;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .progress-bar {
+            background-color: #3b042f;
+            transition: background-color 0.5s ease;
+        }
+
+        .progress-bar.active {
+            background-color: #cc0aa2;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center h-screen bg-fuchsia-200 p-6 text-center">
+
+    <div id="progress-container" class="flex justify-center items-center mb-4">
+        <div class="progress-bar w-10 h-2 rounded-full mx-1"></div>
+        <div class="progress-bar w-10 h-2 rounded-full mx-1"></div>
+        <div class="progress-bar w-10 h-2 rounded-full mx-1"></div>
+        <div class="progress-bar w-10 h-2 rounded-full mx-1"></div>
+        <div class="progress-bar w-10 h-2 rounded-full mx-1"></div>
+        <div class="progress-bar w-10 h-2 rounded-full mx-1"></div>
+        <div class="progress-bar w-10 h-2 rounded-full mx-1"></div>
+        <div class="progress-bar w-10 h-2 rounded-full mx-1"></div>
+        <div class="progress-bar w-10 h-2 rounded-full mx-1"></div>
+    </div>
+
+    <div id="story1" class="story h-screen flex items-center justify-center text-4xl active">
+        <p>
+            Hey Sophia..<span class="blinking-dot">.</span>
+        </p>
+    </div>
+
+    <div id="story2" class="story h-screen flex items-center justify-center text-3xl hidden">
+        <p>
+            When you entered my life,<br>
+            I never thought <br>
+            that any of this <br>
+            would happen. <br> <br>
+            And I don't think<br>
+            you did either..<span class="blinking-dot">.</span>
+        </p>
+    </div>
+
+    <div id="story3" class="story h-screen flex items-center justify-center text-3xl hidden">
+        <p>
+            But now that it's happening,<br>
+            I want to express<br>
+            my gratitude<br><br>
+            and share something<br>with you..<span class="blinking-dot">.</span>
+        </p>
+    </div>
+
+    <div id="story4" class="story h-screen flex items-center justify-center text-4xl hidden">
+        <p>
+            Here is a poem,<br>
+            just for you..<span class="blinking-dot">.</span>
+        </p>
+    </div>
+
+    <div id="story5" class="story h-screen flex items-center justify-center text-2xl hidden">
+        <p>
+            We often talked<br>
+            for long after the sun has set,<br><br>
+            but truly,<br><br>
+            talking to you,<br>
+            always feels<br>
+            like the most beautiful sunset.
+        </p>
+    </div>
+
+    <div id="story6" class="story h-screen flex items-center justify-center text-3xl hidden">
+        <p>
+            I have many more,<br>
+            but now<br>
+            I want to give you this..<span class="blinking-dot">.</span>
+        </p>
+    </div>
+
+    <div id="story7" class="story h-screen flex flex-col items-center justify-center text-3xl hidden">
+        <p class="my-4">... a flower</p>
+        <div class="flower animate-float animation-slow">
+            <div class="mid"></div>
+            <div class="Petal1 p1"></div>
+            <div class="Petal1 p2"></div>
+            <div class="Petal1 p3"></div>
+            <div class="Petal1 p4"></div>
+            <div class="Petal2 p1"></div>
+            <div class="Petal2 p2"></div>
+            <div class="Petal2 p3"></div>
+            <div class="Petal2 p4"></div>
+            <div class="Petal3 p1"></div>
+            <div class="Petal3 p2"></div>
+            <div class="Petal3 p3"></div>
+            <div class="Petal3 p4"></div>
+        </div>
+    </div>
+
+    <div id="story8" class="story h-screen flex items-center justify-center text-4xl hidden">
+        <p>
+            And I want to<br>
+            give you this..<span class="blinking-dot">.</span>
+        </p>
+    </div>
+
+    <div id="story9" class="story h-screen flex items-center justify-center text-4xl hidden">
+        <p>
+            Turn around..<span class="blinking-dot">.</span> <br><br>:)
+        </p>
+    </div>
+
+    <img class="floating-image" id="floatingImage" />
+
+    <script>
+        let currentStory = 1;
+        const totalStories = 9;
+
+        const images = [
+            'images/mocha.png',
+            'images/cinnamoroll.webp',
+            'images/daniel.png',
+            'images/hellokitty.png'
+        ];
+        let lastImageIndex = -1;
+
+        function showStory(storyNumber) {
+            for (let i = 1; i <= totalStories; i++) {
+                const storyElement = document.getElementById('story' + i);
+                if (i === storyNumber) {
+                    storyElement.classList.add('active');
+                    storyElement.classList.remove('hidden');
+                } else {
+                    storyElement.classList.remove('active');
+                    storyElement.classList.add('hidden');
+                }
+            }
+            updateProgressBar(storyNumber);
+        }
+
+        function updateProgressBar(storyNumber) {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach((bar, index) => {
+                if (index < storyNumber) {
+                    bar.classList.add('active');
+                } else {
+                    bar.classList.remove('active');
+                }
+            });
+        }
+
+        function changeImage() {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * images.length);
+            } while (randomIndex === lastImageIndex);
+
+            lastImageIndex = randomIndex;
+            document.getElementById('floatingImage').src = images[randomIndex];
+        }
+
+        document.body.addEventListener('click', function(event) {
+            const screenWidth = window.innerWidth;
+            const clickX = event.clientX;
+
+            if (clickX > screenWidth / 2) {
+                // Click on the right side
+                currentStory = (currentStory % totalStories) + 1;
+            } else {
+                // Click on the left side
+                if (currentStory > 1) {
+                    currentStory = (currentStory - 2 + totalStories) % totalStories + 1;
+                }
+            }
+
+            showStory(currentStory);
+            changeImage();
+        });
+
+        // Initial display of the first story and random image
+        showStory(currentStory);
+        changeImage();
+
+        // Bouncing animation logic
+        const img = document.getElementById('floatingImage');
+        let posX = 0;
+        let posY = 0;
+        let velocityX = 0.4; // 0.25x the original speed
+        let velocityY = 0.4; // 0.25x the original speed
+        const imgWidth = img.clientWidth;
+        const imgHeight = img.clientHeight;
+        const updateInterval = 1; // Update every 10ms
+
+        function updatePosition() {
+            posX += velocityX;
+            posY += velocityY;
+
+            if (posX + imgWidth > window.innerWidth || posX < 0) {
+                velocityX *= -1;
+            }
+            if (posY + imgHeight > window.innerHeight || posY < 0) {
+                velocityY *= -1;
+            }
+
+            img.style.left = posX + 'px';
+            img.style.top = posY + 'px';
+        }
+
+        setInterval(updatePosition, updateInterval);
+    </script>
+
+</body>
+</html>
